@@ -9,17 +9,18 @@
     "start": "node app.js",
     "monitor": "nodemon app.js",
     "deploy": "gcloud app deploy app.yaml",
-    "test": "mocha test/index.js -t 30000"
+    "test": "mocha test -t 30000"
   },
   "dependencies": {
     "express": "^4.15.2"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "mocha": "^3.2.0",
-    "nodejs-repo-tools": "git+https://git@github.com/GoogleCloudPlatform/nodejs-repo-tools.git",
-    "supertest": "^3.0.0"
+    "nodejs-repo-tools": "git+https://git@github.com/GoogleCloudPlatform/nodejs-repo-tools.git"
   },
- "engines": {
+  "engines": {
     "node": ">=4.3.2"
   }
 }

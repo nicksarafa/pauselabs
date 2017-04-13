@@ -1,21 +1,20 @@
-const assert = require(`assert`)
-const config = require(`./config.test`)
-const utils = require(`nodejs-repo-tools`)
+const chai = require('chai')
+const chaiHttp = require('chai-http')
+const should = chai.should()
+const app = require('../app')
+const config = require('./config.test')
 
-describe(`app.js`, () => {
-  if (!process.env.E2E_TESTS) {
-    it(`should run`, (done) => {
-      utils.testLocalApp(config, done)
-    })
-  }
+chai.use(chaiHttp)
 
-  it(`should create an express app`, (done) => {
-    utils.getRequest(config)
-      .get(`/`)
-      .expect(200)
-      .expect((response) => {
-        assert.equal(response.text, config.msg)
+describe('app.js', () => {
+  it('it should return an HTML page via express-static', (done) => {
+    chai.request(app)
+      .get('/')
+      .end((err, res) => {
+        res.body.should.be.a('object')
+        res.type.should.equal('text/html')
+        res.charset.should.equal('UTF-8')
+        done()
       })
-      .end(done)
   })
 })
