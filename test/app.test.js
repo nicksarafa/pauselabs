@@ -1,5 +1,5 @@
 const assert = require(`assert`)
-const config = require(`./config`)
+const config = require(`./config.test`)
 const utils = require(`nodejs-repo-tools`)
 
 describe(`app.js`, () => {

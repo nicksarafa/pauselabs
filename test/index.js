@@ -1,4 +1,4 @@
-const config = require(`./config`)
+const config = require(`./config.test`)
 const utils = require(`nodejs-repo-tools`)
 
 describe(`${config.test}/`, () => {
