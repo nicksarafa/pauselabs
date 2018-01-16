@@ -8,8 +8,9 @@
   "scripts": {
     "start": "node app.js",
     "monitor": "nodemon app.js",
+    "test": "mocha test -t 30000",
     "deploy": "gcloud app deploy app.yaml",
-    "test": "mocha test -t 30000"
+    "ship": "gcloud app deploy app.yaml"
   },
   "dependencies": {
     "express": "^4.15.2"
