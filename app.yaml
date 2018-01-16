@@ -3,3 +3,8 @@ env: flex
 skip_files:
  - ^node_modules$
  - ^test$
+
+handlers:
+- url: .*
+  script: app.js
+  secure: always
