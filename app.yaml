@@ -8,3 +8,8 @@ handlers:
 - url: .*
   script: app.js
   secure: always
+- url: /
+  static_files: build/index.html
+  upload: build/index.html
+- url: /
+  static_dir: build
