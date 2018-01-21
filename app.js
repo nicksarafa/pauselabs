@@ -11,7 +11,7 @@ app.use(function(req, res, next) {
     return res.redirect(['https://', req.get('Host'), req.url].join(''))
   }
   next()
-}, express.static(path.join(__dirname, 'public')))
+}, express.static(path.join(__dirname, 'build')))
 
 if (module === require.main) {
   const server = app.listen(process.env.PORT || 8080, () => {
