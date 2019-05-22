@@ -1,6 +1,7 @@
 # build directory
 # build
 
+yarn.lock
 config.json
 
 # Logs
